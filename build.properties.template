@@ -1,0 +1,53 @@
+# ------------------------------------------------------------------------------
+# Project Description Information 
+# ------------------------------------------------------------------------------
+
+# Project copyright notice
+project.copyright=Copyright &#169; 2008 - www.ncibi.org
+
+# Base package name for Java classes in this project (for Javadoc generation)
+project.package=org.ncibi.mimiweb
+
+# Project name (... becomes the name of the webapps war file, webapps dir; 
+# see build.xml, property = webapp.dir and property = war.filename)
+project.name=MimiWeb
+
+# ------------------------------------------------------------------------------
+# Build - Lucene directory (see build.xml, tag = index)
+# ------------------------------------------------------------------------------
+# directory for lucene index build
+lucene.output.dir=MimiWebR2Lucene
+
+# ------------------------------------------------------------------------------
+# Backend jar file - location of the NCIBIBackend Jar file, NcibiWebBackend.jar
+# ------------------------------------------------------------------------------
+ncibi.backend.jar.name=NcibiWebBackend.jar
+ncibi.backend.jar.source.path=/directory/path/to/WebBackend/build/jar/
+
+# ------------------------------------------------------------------------------
+# Build - Tomcat target (see build.xml, tag = deploy)
+# ------------------------------------------------------------------------------
+
+#tomcat webapps directory
+tomcat.base=/this/is/the/path/to/tomcat/
+tomcat.webapps=${tomcat.base}/webapps
+tomcat.lib=${tomcat.base}/lib
+
+# ------------------------------------------------------------------------------
+# Build - Compilation Options
+# ------------------------------------------------------------------------------
+
+# Source JDK platform to compile for
+project.source=1.5
+
+# Target JDK platform to compile to
+project.target=1.5
+
+# Should compiler generate line numbers for debugging (true or false)
+compile.debug=true
+
+# Should compiler generate detailed warnings for using deprecated APIs (true or false)
+compile.deprecation=false
+
+# Should compiler optimize the generated code (true or false)
+compiler.optimize=true

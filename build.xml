@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="MimiWeb" default="deploy-from-maven" basedir=".">
+
+	<!-- Include property values -->
+	<property file="build.properties"/>
+
+	<!-- -->
+	<property name="saga.patch.warfile.name" value="MimiWeb-0.2a.war"/>
+	
+	<!-- Project Directory Structure -->
+
+	<!-- Source Directory Structure Definitions  -->
+	<property name="src.dir" location="${basedir}/src" />
+	<property name="web.dir" location="${basedir}/WebContent" />
+	<property name="web-inf.dir" location="${web.dir}/WEB-INF/" />
+	<property name="web-inf.lib.dir" location="${web.dir}/WEB-INF/lib/" />
+	<property name="image.dir" location="${web.dir}/images" />
+
+	<!-- Target Directory Structure Definitions -->
+	<property name="build.dir" location="${basedir}/build" />
+	<property name="build.config" location="${build.dir}/configure" />
+	<property name="build.web.dir" location="${build.dir}/web" />
+	<property name="build.web.classes" location="${build.web.dir}/WEB-INF/classes"/>
+	<property name="build.docs.dir" location="${build.dir}/javadocs" />
+	<property name="build.war.dir" location="${build.dir}/war" />
+	<property name="build.classes" location="${build.dir}/classes" />
+	<property name="web-inf.classes.dir" location="${web.dir}/WEB-INF/classes/" />
+	<property name="web-inf.lib.dir" location="${web.dir}/WEB-INF/lib" />
+	
+	<!-- Directories at the tomcat webapps location -->
+	<property name="webapp.dir" location="${tomcat.webapps}/${project.name}/"/>
+	<property name="webapp.web-inf.classes.dir" location="${webapp.dir}/WEB-INF/classes/"/>
+	
+	<!-- Location of Ncibi Backend jar file - see build.properties -->
+	<property name="ncibi.backend.jar" location="${ncibi.backend.jar.source.path}/${ncibi.backend.jar.name}"/>
+
+	<!-- war file location and name -->
+	<property name="maven.target" location="${basedir}/target"/>
+	<property name="maven.war" location="${maven.target}/ncibi-mimiweb-2.2.war" />
+	<property name="war.filename" value="${project.name}.war" />
+	
+	<!-- Java Compile Classpath -->
+	<path id="compile.classpath">
+		<fileset dir="${web-inf.lib.dir}" includes="**/*.jar" />
+        <fileset dir="${tomcat.lib}" includes="*.jar" />
+		<pathelement path="${java.class.path}/"/>
+	</path>
+
+	<!-- Java run classpath for index -->
+	<path id="run.classpath">
+		<pathelement location="${build.web.dir}/WEB-INF/classes" />
+		<fileset dir="${lib.dir}" includes="**/*.jar" />
+		<pathelement path="${java.class.path}/"/>
+	</path>
+	
+	<!-- check for install-time configured file; fail if they do no exist! --> 
+	<target name="propeties-exists" >
+	  <available file="build.properties" property="isPropFileThere" />
+	  <fail unless="isPropFileThere" message="build.properties does not exist! copy, change build.properties.template, main dir" />
+	</target>
+    <target name="runtime-properties-exists">
+  	  <available file="${src.dir}/mimiweb.properties" property="isRuntimePropertiesThere" />
+  	  <fail unless="isRuntimePropertiesThere" message="${src.dir}/mimiweb.properties does not exist; see mimiweb.properties.template in src dir" />
+    </target>
+    <target name="web-xml-exists">
+  	  <available file="${web-inf.dir}/web.xml" property="isWebFileThere" />
+  	  <fail unless="isWebFileThere" message="${web-inf.dir}/web.xml does not exist! copy, change template.for.web.xml" />            
+    </target>
+	
+	<!-- checks for build-time targets; early fail with message -->
+	<target name="tomcat-webapp-exists">
+	  <available file="${tomcat.webapps}" property="isWebappAvail" />
+	  <fail unless="isWebappAvail" message="Tomcat webapps dir, ${tomcat.webapps}, does not exist! See build.properties: tomcat.webapps." />
+	</target>
+	<target name="tomcat-webapp-project-exists" depends="tomcat-webapp-exists">
+	  <available file="${webapp.dir}" property="isWebappProjectAvail" />
+	  <fail unless="isWebappProjectAvail" message="Project webapp, ${webapp.dir}, does not exist!  See build.properties: tomcat.webapps and project.name" />
+	</target>
+	
+	<!-- check for source of backend jar file -->
+	<target name="backend-jar-source-exists">
+	  <available file="${ncibi.backend.jar}" property="isWebBackendSourceAvail" />
+	  <fail unless="isWebBackendSourceAvail" message="Web Backend source jar file is missing ${ncibi.backend.jar}. See build.properties" />
+	</target>
+
+	<!-- check for backend jar file in WEB-INF-->
+	<target name="backend-jar-exists">
+	  <available file="${web-inf.lib.dir}/${ncibi.backend.jar.name}" property="isWebBackendAvail" />
+	  <fail unless="isWebBackendAvail" message="Web Backend jar file, ${ncibi.backend.jar.name}, is missing from the WEB-INF/lib dir. Run: ant fetch-backend-jar" />
+	</target>
+
+	<!-- all file checks, for deploy targets -->
+    <target name="files-ok" depends="propeties-exists,runtime-properties-exists,web-xml-exists,tomcat-webapp-exists,backend-jar-exists" />
+	
+	<!-- Delete everything this build.xml created -->
+	<target     name="clean" description="Clean all build directories">
+		<delete dir="${build.dir}"/>
+		<delete	dir="${web-inf.classes.dir}" />
+	</target>
+
+	<!-- Create the folder structure -->
+	<target     name="prepare">
+		<mkdir     dir="${build.dir}"/>
+		<mkdir     dir="${build.classes}" />
+		<mkdir     dir="${build.docs.dir}" />
+		<mkdir     dir="${build.war.dir}" />
+		<mkdir     dir="${web-inf.classes.dir}" />
+		<mkdir     dir="${web-inf.lib.dir}" />
+	</target>
+
+	<!-- copy the backend jar file to the web content lib directory -->
+	<target name="fetch-backend-jar" depends="prepare,backend-jar-source-exists">
+		<copy file="${ncibi.backend.jar}" toFile="${web-inf.lib.dir}/${ncibi.backend.jar.name}" />
+	</target>
+
+	<!-- compile -->
+	<target  name="java-compile" depends="clean,prepare,fetch-backend-jar,files-ok" description="Compile application components">
+		
+		<!-- Compile Java Sources -->
+		<echo message="Compiling src and genfile to root= ${web-inf.classes.dir}" />
+		<javac      srcdir="${src.dir}"
+	               destdir="${web-inf.classes.dir}"
+				     debug="${compile.debug}"
+     		   deprecation="${compile.deprecation}"
+				  optimize="${compile.optimize}"
+					source="${project.source}"
+					target="${project.target}">
+			
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+	<!-- Deploy related targets --> 
+	<target name="copy-all" depends="java-compile">
+
+		<!-- Copy all WebContent directory -->
+		<echo message="copying from ${web.dir}" />
+		<copy    todir="${build.web.dir}">
+			<fileset dir="${web.dir}"/>
+		</copy>
+
+		<!-- Copy static contenct for server from src files -->
+		<echo message="copying from ${src.dir}" />
+		<copy    todir="${build.web.classes}" >
+			<fileset dir="${src.dir}" excludes="**/*.java" />
+		</copy>
+		
+	</target>
+	
+	<target name="copy-class-and-jsp" depends="java-compile, tomcat-webapp-project-exists">
+		<!-- copy src classes (note, not copying genefile classes!) -->
+		<echo message="copying class files from ${build.web.classes} to ${webapp.web-inf.classes.dir}" />
+		<copy    todir="${webapp.web-inf.classes.dir}" >
+			<fileset dir="${build.web.classes}" includes="**/*.class" />
+		</copy>
+		<!-- copy jsp files -->
+		<echo message="copying jsp, html, and css files from ${web.dir} to ${build.web.dir}" />
+		<copy    todir="${webapp.dir}" >
+			<fileset dir="${web.dir}" includes="*.jsp,*.html,**/*.css" />
+		</copy>
+		<!-- copy css files -->
+	</target>
+		
+	<target name="create-war" depends="clean,java-compile" description="Create war distribution">
+		<jar   jarfile="${build.war.dir}/${war.filename}" basedir="${build.web.dir}" />
+	</target>
+
+	<target name="deploy-war" depends="create-war">
+		<copy   todir="${tomcat.webapps}" file="${build.war.dir}/${war.filename}" />
+	</target>
+	
+	<target name="deploy-saga-patch-war" depends="create-war">
+		<copy file="${build.war.dir}/${war.filename}" tofile="${build.war.dir}/${saga.patch.warfile.name}" />
+		<copy todir="${tomcat.webapps}" file="${build.war.dir}/${saga.patch.warfile.name}" />
+	</target>
+
+    <target name="api-jar" depends="java-compile" description="Create jar file of classes">
+        <delete file="MimiWeb.jar"/>
+        <jar jarfile="MimiWeb.jar" excludes="hibernate.cfg.xml" basedir="${build.web.classes}"/>
+    </target>
+	
+	<target name="deploy" depends="clean, copy-all, deploy-war" />
+	
+	<target name="redeploy" depends="tomcat-webapp-exists, copy-class-and-jsp" />
+		
+	<target name="deploy-redirects">
+		<mkdir dir="${tomcat.webapps}/MiMI" />
+
+		<mkdir dir="${tomcat.webapps}/MiMI/css" />
+		<copy todir="${tomcat.webapps}/MiMI/css" file="${basedir}/WebContent/css/displaytag.css" />
+
+		<mkdir dir="${tomcat.webapps}/MiMI/WEB-INF" />
+		<copy tofile="${tomcat.webapps}/MiMI/WEB-INF/web.xml" file="${basedir}/extras/veryBasicWeb.xml" />
+
+		<copy tofile="${tomcat.webapps}/MiMI/index.jsp" file="${basedir}/WebContent/RedirectOldUrl.html" />
+		<copy tofile="${tomcat.webapps}/MiMI/index.html" file="${basedir}/WebContent/RedirectOldUrl.html" />
+		<copy tofile="${tomcat.webapps}/MiMI/home.jsp" file="${basedir}/WebContent/RedirectOldUrl.html" />
+
+		<copy tofile="${webapp.dir}/MimiWebApplication.html" file="${basedir}/WebContent/RedirectOldUrl.html" />
+	</target>
+	
+	<target name="deploy-from-maven" depends="tomcat-webapp-exists">
+		<echo message="copying from file = ${maven.war} to file = ${maven.target}/${war.filename}" />
+		<copy file="${maven.war}" tofile="${maven.target}/${war.filename}" />
+		<echo message="copying from file = ${maven.target}/${war.filename} to dir = ${tomcat.webapps}" />
+		<copy todir="${tomcat.webapps}" file="${maven.target}/${war.filename}" />
+	</target>
+</project>

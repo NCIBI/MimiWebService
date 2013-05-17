@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2008 11:16:09 PM by Hibernate Tools 3.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.ncibi.mimiweb.browser.hibernate.generated.GeneGeneInteraction" table="GeneGeneInteraction" schema="denorm" catalog="mimiR2" mutable="false">
+        <id name="ggIntId" type="int">
+            <column name="ggIntID" />
+            <generator class="assigned" />
+        </id>
+        <property name="geneid1" type="java.lang.Integer">
+            <column name="geneid1" />
+        </property>
+        <property name="symbol1" type="string">
+            <column name="symbol1" length="200" />
+        </property>
+        <property name="taxid1" type="java.lang.Integer">
+            <column name="taxid1" />
+        </property>
+        <property name="geneid2" type="java.lang.Integer">
+            <column name="geneid2" />
+        </property>
+        <property name="symbol2" type="string">
+            <column name="symbol2" length="200" />
+        </property>
+        <property name="taxid2" type="java.lang.Integer">
+            <column name="taxid2" />
+        </property>
+        <property name="molType1" type="string">
+            <column name="molType1" length="50" />
+        </property>
+        <property name="molType2" type="string">
+            <column name="molType2" length="50" />
+        </property>
+        <set name="geneGeneInteractionAttributes" inverse="true">
+            <key>
+                <column name="ggIntID" />
+            </key>
+            <one-to-many class="org.ncibi.mimiweb.browser.hibernate.generated.GeneGeneInteractionAttribute" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,113 @@
+"scientificName","taxid"
+"all",-1
+"Homo sapiens",9606
+"Saccharomyces cerevisiae",4932
+"Drosophila melanogaster",7227
+"Caenorhabditis elegans",6239
+"Mus musculus",10090
+"Escherichia coli",562
+"Rattus norvegicus",10116
+"Arabidopsis thaliana",3702
+"Helicobacter pylori 26695",85962
+"Plasmodium falciparum 3D7",36329
+"Escherichia coli K12",83333
+"Oryza sativa",4530
+"Schizosaccharomyces pombe",4896
+"Xenopus laevis",8355
+"Bos taurus",9913
+"Oryza sativa (japonica cultivar-group)",39947
+"Synechocystis sp. PCC 6803",1148
+"Gallus gallus",9031
+"Dictyostelium discoideum",44689
+"Rickettsia sibirica 246",272951
+"Schizosaccharomyces pombe 972h-",284812
+"Hordeum vulgare",4513
+"Methanothermobacter thermautotrophicus str. Delta H",187420
+"Xanthomonas axonopodis pv. citri str. 306",190486
+"Oryctolagus cuniculus",9986
+"Rhodopseudomonas palustris",1076
+"Enterobacteria phage T7",10760
+"Petunia x hybrida",4102
+"Helicobacter pylori",210
+"Bacillus subtilis subsp. subtilis str. 168",224308
+"Triticum aestivum",4565
+"Sus scrofa",9823
+"Pisum sativum",3888
+"Bacillus subtilis",1423
+"Hepatitis C virus",11103
+"Human immunodeficiency virus 1",11676
+"Solanum tuberosum",4113
+"Trypanosoma brucei",5691
+"Shigella flexneri",623
+"Synechococcus elongatus",32046
+"Mycobacterium tuberculosis H37Rv",83332
+"Danio rerio",7955
+"Vaccinia virus",10245
+"Mammalia",40674
+"Agrobacterium tumefaciens",358
+"Salmonella typhimurium",602
+"Spinacia oleracea",3562
+"Nicotiana tabacum",4097
+"Canis familiaris",9615
+"Solanum lycopersicum",4081
+"Human herpesvirus 1",10298
+"Human herpesvirus 4",10376
+"Zea mays",4577
+"Antirrhinum majus",4151
+"Human herpesvirus 8",37296
+"Vaccinia virus WR",10254
+"Chlorocebus aethiops",9534
+"Cricetulus griseus",10029
+"Clostridium thermocellum",1515
+"Synechococcus elongatus PCC 7942",1140
+"Geobacillus stearothermophilus",1422
+"Chlamydomonas reinhardtii",3055
+"Human adenovirus 5",28285
+"Sulfolobus solfataricus",2287
+"Mesocricetus auratus",10036
+"Hepatitis B virus",10407
+"Human adenovirus 2",10515
+"Candida albicans",5476
+"Enterobacteria phage T4",10665
+"Tick-borne encephalitis virus",11084
+"Potato virus A",12215
+"Agrobacterium tumefaciens str. C58",176299
+"Pichia pastoris",4922
+"Staphylococcus aureus",1280
+"Caulobacter vibrioides",155892
+"Pseudomonas aeruginosa PAO1",208964
+"Bartonella henselae str. Houston-1",283166
+"Human adenovirus type 12",28282
+"Human T-lymphotropic virus 1",11908
+"Caulobacter crescentus CB15",190650
+"Salmonella typhimurium LT2",99287
+"Klebsiella pneumoniae",573
+"Mycobacterium tuberculosis",1773
+"Herpes simplex virus (type 1 / strain 17)",10299
+"Ovis aries",9940
+"Human herpesvirus 5 strain AD169",10360
+"Human herpesvirus 4 (strain B95-8)",10377
+"Neurospora crassa",5141
+"Thermotoga maritima",2336
+"Erwinia chrysanthemi",556
+"Yersinia enterocolitica",630
+"Pseudomonas aeruginosa",287
+"Pseudomonas putida",303
+"synthetic construct",32630
+"Pyrococcus furiosus DSM 3638",186497
+"Human papillomavirus type 16",333760
+"Pea seed-borne mosaic virus",12208
+"Human papillomavirus type 11",10580
+"Simian virus 40",10633
+"Hepatitis C virus subtype 1b",31647
+"Kluyveromyces lactis",28985
+"Thermus thermophilus HB8",300852
+"Influenza A virus (A/Puerto Rico/8/34(H1N1))",211044
+"SARS coronavirus",227859
+"Emericella nidulans",162425
+"Hordeum vulgare subsp. vulgare",112509
+"Azotobacter vinelandii",354
+"Streptococcus pyogenes",1314
+"Brassica oleracea",3712
+"Arachis hypogaea",3818
+"Bovine papillomavirus type 1",10559

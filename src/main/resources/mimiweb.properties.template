@@ -1,0 +1,84 @@
+## This file should be copied to mimiweb.properties and changed for the
+## current configuration. 
+##
+# ------------------------------------------------------------------------------
+# Lucene Configuration Properties - used by org.ncibi.mimiweb.lucene
+# see org.ncibi.mimiweb.lucene.PropertiesUtil
+# ------------------------------------------------------------------------------
+search.dir=Lucene
+#search.dir=MimiWebR2Lucene
+search.use.catalina.home=true
+#catalina.home=/use/this/for/testing
+
+# ------------------------------------------------------------------------------
+# Selectively enable some parts...
+# ------------------------------------------------------------------------------
+
+# Autocomplete
+NamesFileUseCatalina=Yes
+NamesFile=names.txt
+
+# Metabolomics
+metabolomics=on
+
+# Reactome
+reactome=on
+
+# Save List to Application to Application server
+savelist=off
+saveWebappName=App2AppDisplay
+
+# ------------------------------------------------------------------------------
+# Database Configuration Properties - used by org.ncibi.mimi.hibernate.factory...
+# ------------------------------------------------------------------------------
+#   For detail see http://msdn.microsoft.com/en-us/library/bb469732.aspx 
+#     -- the section on Connecting to SQL Server with the JDBC Driver
+#     -- sub-section on Building the Connection URL
+#     note especially: jdbc:sqlserver://[serverName[\instanceName][:portNumber]][;property=value[;property=value]]
+#     and the wanring: If both a portNumber and instanceName are used, the portNumber will take precedence and the instanceName will be ignored.
+#
+#   in our case, is the instance is give, the port is ignored, to assure that the instance will be used
+#
+# URL tempates:
+# 		   jdbc:sqlserver://[host]:[port];databaseName=[name];selectMethod=cursor;
+# 		or jdbc:sqlserver://[host]\[instance];databaseName=[name];selectMethod=cursor;
+# human readable template:
+# 		[brief]:[name]
+
+# defaults
+database.url.default.host=ncibidb.bicc.med.umich.edu
+database.url.default.brief=PUBLIC-DB
+database.url.default.port=1433
+#database.url.default.instance=
+database.url.default.name=noname
+
+# Tempate for database xxx; name is required
+# un-comment host, brief, and/or port to override default 
+# database.url.xxx.host=/ncibidb.bicc.med.umich.edu
+# database.url.xxx.brief=PUB:mimiR2
+# database.url.xxx.port=1433
+# database.url.xxx.instance=XXX
+# database.url.xxx.name=mimiR2
+
+#...for each database: name is required
+database.url.mimi.brief=mimiR2(PUB)
+database.url.mimi.name=mimiR2
+
+database.url.gene.brief=geneR2(PUB)
+database.url.gene.name=geneR2
+
+database.url.pubmed.brief=pubmed(PUB)
+database.url.pubmed.name=pubmed
+
+database.url.humdb.host=ncibidb3.bicc.med.umich.edu
+database.url.humdb.name=humdb
+database.url.humdb.brief=humdb(DB3)
+
+database.url.reactome.host=ncibidb3.bicc.med.umich.edu
+database.url.reactome.name=reactome
+database.url.reactome.brief=reactome(DB3)
+
+## currently these are not used... hardcoded; see hibernate.cfg.xml
+##... username and password
+# database.username=userMimiWeb
+# database.password=mimi4ncibi

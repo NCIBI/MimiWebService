@@ -1,0 +1,725 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	}
+p {
+font-size: 12px;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+h1, h2, h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-align: left;
+}
+
+#mimi-top {
+	height: 70px;
+	width: 1000px;
+	background-color: #3480B4;
+	color: white;
+}
+#mimi-top-2 {
+	height: 290px;
+	width: 1000px;
+	background-color: #3480B4;
+	color: white;
+	position: absolute;
+}
+
+#mimi-search-form {
+	position: relative;
+	width: 1000px;
+	height: 70px;
+}
+#mimi-search-form-2 {
+	position: relative;
+	width: 1000px;
+	height: 200px;
+}
+#interaction-query-search-form {
+	position: relative;
+	width: 1000px;
+	height: 90px;
+}
+
+#interaction-query-top {
+	height: 90px;
+	width: 1000px;
+	background-color: #3480B4;
+	color: white; 
+}
+
+#mimi-search-form-2 a {
+	color: white;
+	}
+	
+#search-field {
+	width: 515px;
+	height: 47px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+#search-field-2 {
+	width: 767px;
+	height: 61px;
+	position: absolute;
+	top: 10px;
+	left: 9px;
+}
+
+#search-field-2 textarea {
+	width: 240px;
+	height: 140px;
+	}
+#search-gene-type {
+	width: 397px;
+	height: 83px;
+	position: absolute;
+	top: 34px;
+	left: 331px;
+}
+
+#search-gene-type2 {
+	width: 397px;
+	height: 83px;
+	position: absolute;
+	top: 52px;
+	left: 417px;
+}
+
+#search-gene-type3 {
+	width: 397px;
+	height: 83px;
+	position: absolute;
+	top: 52px;
+	left: 11px;
+}
+
+#filter-field-2 {
+   width: 300px;
+   height: 25px;
+   position: absolute; 
+   top: 10px;
+   left: 505px;
+	}
+#upload-gene-list {
+   width: 300px;
+   height: 200px;
+   position: absolute; 
+   top: 65px;
+   left: 505px;
+	}
+	
+#search-field-bottom {
+	width: 300px;
+	height: 25px; 
+	position: absolute; 
+	top: 35px; 
+	left: 10px; 
+}
+#filter-field {
+   width: 350px;
+   height: 25px;
+   position: absolute; 
+   top: 10px;
+   left: 510px;
+	}
+
+#gene1-field {
+	width: 200px;
+	height: 25px; 
+	position: absolute; 
+	top: 10px; 
+	left: 10px; 
+	}
+#gene2-field {
+	width: 200px;
+	height: 25px; 
+	position: absolute; 
+	top: 40px; 
+	left: 10px; 
+	}
+
+#interaction-query-field-example {
+	width: 450px;
+	height: 25px; 
+	position: absolute; 
+	top: 10px; 
+	left: 210px;
+}
+#interaction-query-button {
+	width: 155px
+	}
+	
+#interaction-query-field-button {
+    width: 155px;
+    position: absolute;
+    left: 25px;
+    top: 65px;
+} 
+#filter-field-1a {
+   width: 350px;
+   height:25px;
+   position: absolute; 
+   top: 10px;
+   left: 505px;
+	}
+#filter-field-1b {
+   width: 350px;
+   height: 25px;
+   position: absolute; 
+   top: 40px;
+   left: 505px;
+	}
+#filter-field-bottom-1 {
+	width: 300px;
+	height: 5px; 
+	position: absolute; 
+	top: 70px; 
+	left: 505px; 
+}
+
+#search-field input {
+	width: 295px;
+}
+
+#filter-field-bottom {
+	width: 350px; 
+	height: 25px; 
+	position: absolute;
+	top: 35px;
+	left: 510px;
+	}
+	
+#browse-disclamer {
+    font-style: bold;
+    font-size: 14px; 
+}
+
+#browse-disclamer-image {
+}
+
+#browse-section-title{
+	font-size: 12px;
+    font-weight:bold;
+}
+
+INPUT,TEXTAREA { 
+    font-family: verdana, sans-serif; 
+    font-size: 10px; 
+	font-size: 10px; }
+
+#search-button {
+	width: 130px;
+	}
+#mimi-gene-query-main-table {
+	border: 0;
+	}
+#mimi-gene-query-top {
+	height: 85px;
+	width: 1000px;
+	background-color: #3480b4;
+	color: white; 
+}
+#mimi-gene-query-form {
+	position: relative;
+	width: 1000px;
+	height: 75px;
+}
+
+.warning{
+	color: #FF0000;
+	background-color: #FFDDDD;
+}
+
+.trigger{
+   cursor: pointer;
+   cursor: hand;
+}
+.branch{
+   display: none;
+   margin-left: 16px;
+}
+
+#attribute-listings-holder {
+	width: 100%;
+}
+
+.attribute-type-bold {
+	font-weight: bold;
+}
+
+.attribute-listing-title {
+	font-weight: bold;
+	font-size: 10-larger;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.attribute-listing-empty {
+	font-style: italic;
+   margin-left: 16px;
+}
+
+.attribute-count {
+	font-weight: normal;
+	margin-right:10em;
+	margin-left:10em;
+}
+
+#debug-gene-list {
+	display:none;
+}
+
+#filter-additions {
+}
+
+#filter-additions-title {
+}
+
+#network-display-holder {
+	padding: 0px;
+	border: 1px solid #666;
+	text-align: left;
+	width: 550px; 
+	height: 406px;
+	right: 0px;
+}
+#network-display-iframe {
+	width: 550px; 
+	height: 406px;
+	right: 0px;
+	}
+
+#interact-doc-term-title {
+	font-weight:bold;
+	font-size:larger;
+}
+.interact-doc-term-heading {
+	font-weight:bold;
+}
+
+#wrapper {
+	width: 1000px;
+	margin: auto;
+	}
+#header {
+	background-image: url(images/MiMI_banner_slice2.jpg);
+	width: 1000px;
+	height: 104px; 
+}
+#header2 {
+	width: 1000px;
+	height: 120px;
+}
+#header-right {
+	float: right;
+}
+
+#header-left {
+	float: left;
+}
+
+#genedetail-1 {
+	width: 250px;
+	float: left;
+	
+}
+
+#genedetail-2 {
+	width: 500px;
+	float: left;
+	
+}
+
+#genedetail-3 {
+	width: 250px;
+	float: left;
+}
+
+#gotermstable  {
+	width: 1000px;
+	}
+	
+#molprovtable {
+	width: 500px;
+}
+
+#doc-detail-text-highlight {
+	background-color:yellow;
+}
+
+span.doc-detail-highlight-note{
+	font-weight: bold;
+}
+
+#doc-detail-gene-table-highlight{
+	background-color:#AAFFAA;
+}
+
+#browse-initial-table{
+	width: 250px;
+}
+
+#browse-initial-table td {
+	height: 2em;
+}
+#browse-result-table {
+}
+
+table.gene-details-table {
+border: 0;
+}
+
+ul.aboutPage li {
+font-size: 12px;
+font-family: 'Times New Roman';
+line-height: 140%;
+list-style-type: none;
+}
+
+ol.aboutPage li {
+font-size: 12px;
+font-family: 'Times New Roman';
+}
+
+ul.helpPage li {
+font-size: 12px;
+font-family: 'Times New Roman';
+list-style-type: none;
+line-height: 140%;
+}
+
+ol.helpPage li {
+font-size: 12px;
+font-family: 'Times New Roman';
+line-height: 14pt;
+}
+
+p.helpPage span {
+font-weight: 600;
+}
+
+
+
+p.helpPage {
+font-family: 'Times New Roman';
+padding-left: 12px;
+}
+p.helpPage2 {
+font-family: 'Times New Roman';
+font-size: 12px;
+}
+
+p.helpPage3 {
+font-family: helvetica;
+font-size: 12px;
+}
+
+h2.helpPage {
+font-family: 'Times New Roman';
+font-size: 15px;
+line-height: 18pt;
+color: blue;
+border-bottom: 1px solid blue;
+}
+
+h2.aboutPage {
+font-family: 'Times New Roman';
+font-size: 15px;
+line-height: 18pt;
+color: blue;
+border-bottom: 1px solid blue;
+}
+
+h3.helpPage {
+font-family: 'Times New Roman';
+font-weight: bold;
+font-size: 12px;
+line-height: 14pt;
+background: #CCEEFF;
+}
+h3.aboutPage {
+font-family: 'Times New Roman';
+font-weight: bold;
+font-size: 12px;
+line-height: 14pt;
+background: #CCEEFF;
+}
+
+p.aboutPage {
+font-family: 'Times New Roman';
+padding-left: 12px;
+}
+
+table.aboutPage {
+width: 80%;
+font-family: helvetica;
+}
+
+
+table.helpPage {
+width: 80%;
+}
+table.helpPage td {
+height: 15px;
+}
+table.helpPage th {
+background-color: #3480B4;
+color: white;
+font-family: helvetica;
+font-size: 12px;
+}
+
+table.aboutPage td {
+height: 15px;
+}
+
+table.aboutPage th {
+background-color: #3480B4;
+color: white;
+font-family: helvetica;
+font-size: 12px;
+}
+
+table.helpPage th {
+background-color: #3480B4;
+color: white;
+font-family: helvetica;
+font-size: 12px;
+}
+
+table.displaytag {
+	border: 1px solid #666;
+	width: 100%;
+	margin: 20px 0 20px 0 !important;
+	font-size: 9px;
+}
+
+th,td {
+	padding: 2px 4px 2px 4px !important;
+	text-align: left;
+	vertical-align: top;
+}
+
+td {
+	height: 45px;
+	}
+
+thead tr {
+	background-color: #3480b4;
+    color: white; 
+}
+
+th.sorted {
+	background-color: orange;
+}
+
+th a,th a:visited {
+	color: white;
+}
+
+th a:hover {
+	text-decoration: underline;
+	color: white;
+}
+
+th.sorted a,th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+/* th.sortable a {
+	background-image: url(/MimiWeb/images/arrow_off.png);
+	background-repeat: no-repeat; 
+}
+
+th.order1 a {
+	background-image: url(/MimiWeb/images/arrow_down.png);
+	background-repeat: no-repeat; 
+}
+
+th.order2 a {
+	background-image: url(/MimiWeb/images/arrow_up.png);
+	background-repeat: no-repeat; 
+}
+*/
+
+tr.odd {
+	background-color: white;
+}
+
+tr.tableRowEven,tr.even {
+	background-color: #ddd;
+}
+
+div.exportlinks a{
+text-decoration: none;
+}
+
+div.exportlinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	margin: 2px 0 10px 0;
+	width: 300px;
+}
+
+span.export {
+	padding: 0 4px 1px 20px;
+	display: inline;
+	display: inline-block;
+	cursor: pointer;
+}
+
+span.excel {
+	background-image: url(/MimiWeb/images/ico_file_excel.png);
+	background-repeat: no-repeat; 
+}
+
+span.csv {
+	background-image: url(/MimiWeb/images/ico_file_csv.png);
+	background-repeat: no-repeat; 
+}
+
+span.xml {
+	background-image: url(/MimiWeb/images/ico_file_xml.png);
+	background-repeat: no-repeat; 
+}
+
+span.pdf {
+	background-image: url(/MimiWeb/images/ico_file_pdf.png);
+}
+
+span.rtf {
+	background-image: url(/MimiWeb/images/ico_file_rtf.png);
+}
+
+span.pagebanner {
+	background-color: #eee;
+	border: 1px dotted #999;
+/*	padding: 2px 4px 2px 4px; */
+	width: 100%;
+	margin-top: 10px;
+	display: block;
+	border-bottom: none;
+}
+
+span.pagelinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+/*	padding: 2px 4px 2px 4px; */
+	width: 100%;
+	display: block;
+	border-top: none;
+	margin-bottom: -5px;
+}
+
+
+.group-1 {
+    font-weight:bold;
+    padding-bottom:10px;
+    border-top:1px solid black;
+}
+.group-2 {
+    font-style:italic;
+    border-top: 1px solid black;
+
+}
+.subtotal-sum, .grandtotal-sum {
+    font-weight:bold;
+    text-align:right;
+}
+.subtotal-header {
+    padding-bottom: 0px;
+    border-top: 1px solid white;
+}
+.subtotal-label, .grandtotal-label {
+    border-top: 1px solid white;
+    font-weight: bold;
+}
+.grouped-table tr.even {
+    background-color: #fff;
+}
+.grouped-table tr.odd {
+    background-color: #fff;
+}
+.grandtotal-row {
+    border-top: 2px solid black;
+}
+
+#bodyColumn {
+
+}
+
+#tool-buttons {
+margin: auto;
+padding-top: 10px;
+padding-bottom: 5px;
+font-size: 12px;
+font-weight: bold;
+}
+
+#tool-buttons ul, #tool-buttons li {
+display: inline;
+list-style-type: none;
+margin: auto;
+}
+
+#tool-buttons li {
+padding-right: 15px;
+}
+
+#mimi-nav {
+width: 1000px;
+border-bottom: 1px solid black;
+margin: 0;
+padding-bottom: 19px;
+padding-left: 10px;
+}
+
+#mimi-nav ul, #mimi-nav li
+{
+display: inline;
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+#mimi-nav a:link, #mimi-nav a:visited
+{
+background: #3480B4;
+border: 1px solid black;
+color: white;
+float: left;
+font-size: small;
+font-weight: normal;
+line-height: 14px;
+margin-right: 8px;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+}
+
+#mimi-nav a:link#current, #mimi-nav a:visited#current
+{
+background: #fff;
+border-bottom: 1px solid white;
+color: #000;
+}
+
+#mimi-nav a:hover { color: #f00; }
+
+strong {
+font-weight: 600;
+}
+
+p.footerContact {
+text-align: center;
+}
+
+
+img {
+border: none;
+}

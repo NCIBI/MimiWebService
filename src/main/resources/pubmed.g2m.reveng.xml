@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="pubmed" match-schema="INFORMATION_SCHEMA" match-name=".*" exclude="true"/>
+  <table-filter match-catalog="pubmed" match-schema="b2d" match-name=".*" exclude="true"/>
+  <table-filter match-catalog="pubmed" match-schema="dbo" match-name=".*" exclude="true"/>
+  <table-filter match-catalog="pubmed" match-schema="gin" match-name=".*" exclude="true"/>
+  <table-filter match-catalog="pubmed" match-schema="g2m" match-name=".*"/>
+  <table-filter match-catalog="pubmed" match-schema="mesh" match-name=".*" exclude="true"/>
+  <table-filter match-catalog="pubmed" match-schema="miriam" match-name=".*" exclude="true"/>
+  <table-filter match-catalog="pubmed" match-schema="misearch" match-name=".*" exclude="true"/>
+  <table-filter match-catalog="pubmed" match-schema="s2m" match-name=".*" exclude="true"/>
+  <table-filter match-catalog="pubmed" match-schema="sys" match-name=".*" exclude="true"/>
+  <table-filter match-catalog="pubmed" match-schema="tag" match-name=".*" exclude="true"/>
+</hibernate-reverse-engineering>

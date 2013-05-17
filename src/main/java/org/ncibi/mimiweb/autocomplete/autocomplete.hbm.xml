@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<!--
+==================================================================================
+    Autocomplete Class Mapping Definitions
+==================================================================================
+-->
+
+    <class name="org.ncibi.mimiweb.autocomplete.AutocompleteItem" mutable="false" lazy="false">
+        <id name="id" type="integer" column="id"/>
+        <property name="item" type="string" column="item"/>
+    </class>
+
+<!--
+==================================================================================
+    Autocomplete Named Sql Queries. The convention is that the named Sql query has
+    the same name as the method.
+==================================================================================
+-->
+
+    <sql-query name="getGeneSymbolsMatching">
+        <return class="org.ncibi.mimiweb.autocomplete.AutocompleteItem"/>
+        select row_number() over (order by item) as id, item
+        from (
+            select distinct top 20 symbol as item from Gene
+            where symbol like :matchOn
+            order by symbol
+
+            union
+
+            select distinct top 20 name as item from GeneName
+            where name like :matchOn
+            order by name
+        ) T
+        order by item
+    </sql-query>
+
+</hibernate-mapping>

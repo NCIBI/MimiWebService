@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 13, 2008 11:16:09 PM by Hibernate Tools 3.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.ncibi.mimiweb.browser.hibernate.generated.GeneAttribute" table="GeneAttribute" schema="denorm" catalog="mimiR2" mutable="false">
+        <composite-id name="id" class="org.ncibi.mimiweb.browser.hibernate.generated.GeneAttributeId">
+            <key-property name="geneid" type="java.lang.Integer">
+                <column name="geneid" />
+            </key-property>
+            <key-property name="attrType" type="string">
+                <column name="attrType" length="50" />
+            </key-property>
+            <key-property name="attrValue" type="string">
+                <column name="attrValue" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

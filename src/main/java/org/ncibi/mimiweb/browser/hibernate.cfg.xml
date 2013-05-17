@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+        <mapping resource="org/ncibi/mimi/browser/hibernate/generated/GeneAttribute.hbm.xml" />
+        <mapping resource="org/ncibi/mimi/browser/hibernate/generated/GeneGeneInteraction.hbm.xml" />
+        <mapping resource="org/ncibi/mimi/browser/hibernate/generated/GeneGeneInteractionAttribute.hbm.xml" />
+
+        <mapping resource="org/ncibi/mimi/browser/hibernate/extensions.hbm.xml" />
+    </session-factory>
+
+</hibernate-configuration>
